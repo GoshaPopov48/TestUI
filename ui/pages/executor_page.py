@@ -5,9 +5,7 @@ class ExecutorPage:
     def __init__(self, page: Page):
         self.page = page
         self.executor = page.locator('[data-test="field"]').filter(has=page.get_by_text("Исполнитель", exact=True)).get_by_role("combobox")
-        
-        
-    
+
     def enter_exexutor(self):
             self.executor.click()
             expect(self.executor).to_have_attribute("aria-expanded", "true")

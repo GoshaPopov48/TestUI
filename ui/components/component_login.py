@@ -12,8 +12,7 @@ class ComponentLogin:
         self.remember_me_checkbox = page.locator('[data-test="ring-checkbox"]')
         
         self.login_button = page.locator('[data-test="login-button"]')
-        
-        
+
     def fill_username(self, username):
         self.username.fill(username)
     
@@ -30,5 +29,3 @@ class ComponentLogin:
         self.fill_username(username)
         self.fill_password(password)
         self.click_login()
-    
-    

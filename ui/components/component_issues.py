@@ -27,8 +27,6 @@ class CreatedIssues:
                     '[data-test="ring-checkbox"] input'
                     )
         
-        
-
     def choice_issue(self):
         self.checkbox.check()
             

@@ -5,7 +5,6 @@ from ui.components.component_login import ComponentLogin
 
 
 class LoginPage:
-    
     def __init__(self, page: Page):
         self.page = page
         self.ComponentLogin = ComponentLogin(page)

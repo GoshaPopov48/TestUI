@@ -12,7 +12,5 @@ def test_added_empty_comment(authenticated_page):
     
     created_comment.new_comment("Это новый комментарий в данной задачи")
     created_comment.add_comment()
-    
 
     time.sleep(2)
-    

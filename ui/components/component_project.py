@@ -35,9 +35,6 @@ class CreateProjectComponents:
             "button", name="Пропустить настройку и перейти к проекту"
         )
         
-        
-        
-    
     def open_new_project(self):
         self.new_project.click()
     
@@ -56,6 +53,3 @@ class CreateProjectComponents:
     def skip_setting(self):
         expect(self.skip_setup).to_be_visible()
         self.skip_setup.click()
-        
-    
-    
