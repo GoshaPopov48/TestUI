@@ -1,7 +1,7 @@
 import pytest
 from uuid import uuid4
 from playwright.sync_api import sync_playwright, expect
-from ui.pages.login_schemas import LoginPage
+from ui.pages.login_page import LoginPage
 
 
 
@@ -15,7 +15,7 @@ from ui.pages.login_schemas import LoginPage
     ("Gosha", " ", "error"),
     ]
 )
-def test_no_valid_login_auth(username, password, expect_result):
+def test_no_valid_password_auth(username, password, expect_result):
     
     with sync_playwright() as pl:
         browser = pl.chromium.launch(headless=False)
@@ -24,7 +24,7 @@ def test_no_valid_login_auth(username, password, expect_result):
         try:
             page.goto("http://localhost:8081/hub/auth/login")
             login_page = LoginPage(page)
-            login_page.login(username, password)
+            login_page.auth(username, password)
             
             if expect_result == "error":
                 expect(

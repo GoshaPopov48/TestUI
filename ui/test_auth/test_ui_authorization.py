@@ -1,6 +1,6 @@
 import pytest
 from playwright.sync_api import sync_playwright
-from ui.pages.login_schemas import LoginPage
+from ui.pages.login_page import LoginPage
 
 @pytest.mark.parametrize(
     "username, password",
@@ -15,7 +15,7 @@ def test_auth(username, password):
         
         page.goto("http://localhost:8081/hub/auth/login")
         login_page = LoginPage(page)
-        login_page.login(username, password)
+        login_page.auth(username, password)
         
         
         assert page.goto("http://localhost:8081/dashboard?id=173-0")
